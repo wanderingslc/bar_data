@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :license_types
   get 'pages/homepage'
   root to: 'pages#homepage'

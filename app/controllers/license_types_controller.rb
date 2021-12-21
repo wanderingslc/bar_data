@@ -1,5 +1,6 @@
 class LicenseTypesController < ApplicationController
   before_action :set_license_type, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /license_types or /license_types.json
   def index
