@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  url: MyString
+  hours: MyString
+  alcohol_types: MyString
+
+two:
+  code: MyString
+  url: MyString
+  hours: MyString
+  alcohol_types: MyString

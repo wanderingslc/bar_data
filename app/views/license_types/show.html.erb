@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @license_type.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @license_type.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @license_type.url %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @license_type.hours %>
+</p>
+
+<p>
+  <strong>Alcohol types:</strong>
+  <%= @license_type.alcohol_types %>
+</p>
+
+<%= link_to 'Edit', edit_license_type_path(@license_type) %> |
+<%= link_to 'Back', license_types_path %>
