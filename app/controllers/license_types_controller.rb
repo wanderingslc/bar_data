@@ -66,6 +66,6 @@ class LicenseTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def license_type_params
-      params.require(:license_type).permit(:code, :description, :url, :hours, :alcohol_types)
+      params.require(:license_type).permit(:code, :description, :url, :hours, :alcohol_types, :name, :liquor, :wine, :heavy_beer, :beer)
     end
 end

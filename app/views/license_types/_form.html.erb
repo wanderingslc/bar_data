@@ -4,12 +4,16 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
+    <%= f.input :name %>
     <%= f.input :code, input_html: {class: 'mb-1'} %>
     <h6>Description</h6>
     <%= f.rich_text_area :description, label: 'Description from DABC', placeholder: 'Description goes here ...', label_html: {class: 'mt-2'} %>
     <%= f.input :url %>
     <%= f.input :hours %>
-    <%= f.input :alcohol_types, as: :check_boxes, collection: LicenseType::TYPES, label: 'Alcohol Types', wrapper: :vertical_collection_inline %>
+    <%= f.input :liquor %>
+    <%= f.input :wine %>
+    <%= f.input :heavy_beer %>
+    <%= f.input :beer %>
   </div>
 
   <div class="form-actions">
