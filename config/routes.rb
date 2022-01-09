@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'import/index'
+  post 'import/import'
   resources :locations
   devise_for :users
   resources :license_types

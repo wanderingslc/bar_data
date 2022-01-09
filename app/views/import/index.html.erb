@@ -1,0 +1,15 @@
+
+
+<h3>Import new list</h3>
+<%= form_for @location, url: import_import_path do |f| %>
+  <div class="form-group">
+    <%= f.label :file, "Upload CSV", class: 'mt-2 mb-2' %>
+    <br>
+    <%= f.file_field :file, class: 'form-control-file mt-2 mb-2', required: true %>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary mt-2' %>
+<% end %>
+<%= form_tag import_import_path, multiple: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import File" %>
+<% end %>
