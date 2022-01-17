@@ -6,14 +6,11 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <%= link_to 'Home', root_path, class: 'nav-item nav-link active' %>
-      <a class="nav-item nav-link" href="#">Features</a>
       <%= link_to 'Locations', locations_path, class: 'nav-item nav-link' %>
       <% if user_signed_in?  %>
         <%= link_to 'Licences', license_types_path, class: 'nav-item nav-link' %>
         <%= link_to 'Import Locations', import_index_path, class: 'nav-item nav-link' %>
         <% end %>
-      <a class="nav-item nav-link" href="#">Pricing</a>
-      <a class="nav-item nav-link disabled" href="#">Disabled</a>
     </div>
   </div>
 </nav>

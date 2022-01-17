@@ -21,4 +21,12 @@
 class Location < ApplicationRecord
   belongs_to :license_type
   has_rich_text :description
+  geocoded_by :street_address
+  reverse_geocoded_by :latitude, :longitude
+
+  def street_address
+    "#{address}, #{city}, #{state}, #{zip}"
+  end
+
+
 end
