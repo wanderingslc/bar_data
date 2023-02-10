@@ -1,4 +1,4 @@
-require Location
+# require Location
 
 namespace :geo_location do
   desc "Check each location for lat/lng, retrieve if missing"

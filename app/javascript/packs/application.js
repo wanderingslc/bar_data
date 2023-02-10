@@ -8,7 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "@fortawesome/fontawesome-free/css/all"
-import 'controllers'
+import "trix"
+import "@rails/actiontext"
 
 
 Rails.start()
@@ -17,5 +18,12 @@ ActiveStorage.start()
 
 
 
-require("trix")
-require("@rails/actiontext")
+
+import 'controllers'
+
+window.initMap = function(...args) {
+    const event = document.createEvent("Events");
+    event.initEvent('google-maps-callback', true, true);
+    event.args = args;
+    window.dispatchEvent(event);
+}

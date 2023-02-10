@@ -1,9 +1,8 @@
 
 
 <main>
-  <div id="map">Map will go here</div>
-  <div data-controller="map">
-    <div class="map" data-target="map.map" data-lon="18.0791" data-lat="48.3268"></div>
+  <div data-controller="maps" data-action="google-maps-callback@window->maps#initMap">
+    <div class="map" data-maps-target="map" style="height: 400px; width: 400px;"></div>
   </div>
-  <%= javascript_include_tag google_maps_script_src, async: true %>
+
 </main>

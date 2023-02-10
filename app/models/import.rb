@@ -13,7 +13,7 @@ class Import < ApplicationRecord
   def self.import(file)
     license_types = %w{AL BR HC LR MD MW RB RS TB AR BW HL LT MO OP RC SA TV BC CL IN LW MP PA RE SC BE HA LB MB MR PS RL SE}.freeze
     @parsed_xlsx = Array.new
-    xlsx = Roo::Spreadsheet.open(file.tempfile)
+    xlsx = Roo::Spreadsheet.open(file)
     xlsx.sheet('Sheet1').each do |location|
       next if location[0].nil?
       next unless license_types.include? location[0].slice(0,2)

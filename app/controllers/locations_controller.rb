@@ -4,7 +4,8 @@ class LocationsController < ApplicationController
 
   # GET /locations or /locations.json
   def index
-    @pagy, @locations = pagy(Location.all)
+    @q = Location.ransack(params[:q])
+    @pagy, @locations = pagy(@q.result)
   end
 
   # GET /locations/1 or /locations/1.json

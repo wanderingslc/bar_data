@@ -5,12 +5,15 @@ class ImportController < ApplicationController
 
   def import
 
-    Import.import(params[:location][:file])
+    Import.import(params[:file])
+    # Import.import(params[:location][:file])
+
     flash[:notice] = "Locations uploaded successfully"
     redirect_to root_path
   end
 
   def create
+    binding.pry
     Import.import(params[:import][:file])
     flash[:notice] = "Locations uploaded successfully"
     redirect_to root_path
