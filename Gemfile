@@ -68,3 +68,7 @@ gem "roo-xls", "~> 1.2"
 gem "pry", "~> 0.14.1"
 
 gem "ransack", "~> 2.5"
+
+gem "importmap-rails", "~> 1.1"
+
+gem "jsbundling-rails", "~> 1.1"

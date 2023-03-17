@@ -1,0 +1,25 @@
+
+<%= simple_form_for :geolocate_form, data: {controller: "geolocation"} do |f| %>
+  <div class="row">
+    <div class="form-check form-switch col">
+      <%= f.check_box :active,
+                      class: "form-check-input",
+                      role: 'switch',
+                      data: {geolocation_target: "checkbox", action: "change->geolocation#toggleCheckbox" }
+      %>
+<%= f.label :active, "Active", class: "form-check-label" %>
+    </div>
+    <div class="col">
+      <%= f.input :distance, collection: [0.25, 0.5, 0.75].concat((1..10).to_a) %>
+    </div>
+  </div>
+  <%= f.hidden_field :lat, value: '', data: {geolocation_target: "lat"} %>
+  <%= f.hidden_field :lng, value: '', data: {geolocation_target: 'lng'} %>
+  <%= f.button :submit, "Geolocate",
+               class: 'btn btn-primary mt-1 disabled',
+               data: {geolocation_target: "submit",
+                      bs_toggle: "tooltip",
+                      bs_placement: "top",
+                      bs_title: "Please enable geolocation"}
+  %>
+<% end %>
