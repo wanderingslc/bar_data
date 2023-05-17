@@ -32,31 +32,34 @@
     </div>
     <div class="col">
       <div data-controller="maps" data-action="google-maps-callback@window->maps#initMap">
-        <div class="map" data-maps-target="map" style="height: 400px; width: 400px;"></div>
+        <div class="map" data-maps-target="map" style="height: 400px; width: 600px;"></div>
+      </div>
+
+      <div class="row  mt-2 mb-5" >
+        <div class="mt-2" id="brewery-list">
+          <h5 data-lat-lng="#{@lat_lng}">List of locations</h5>
+          <ul class="list-unstyled card-columns" style="overflow:scroll; height: 300px;" >
+            <% @locations.each do |l| %>
+              <li
+                class="bar-data-list-item"
+                data-latitude="<%= l.latitude %>"
+                data-longitude="<%= l.longitude %>"
+                data-name="<%= l.name %>"
+              >
+                <p><%= link_to l.name.titleize, location_path(l.id) %></p>
+                <p><%= l.address.titleize%>, <%= l.city.titleize %></p>
+
+              </li>
+              <hr>
+            <% end %>
+
+          </ul>
+          <%== pagy_nav(@pagy) %>
+        </div>
       </div>
     </div>
 
   </div>
-  <div class="row rounded border border-info mt-2">
-    <div class="mt-2" id="brewery-list">
-      <h5 data-lat-lng="#{@lat_lng}">List of locations</h5>
-      <ul class="list-unstyled card-columns" style="column-count:2;">
-        <% @locations.each do |l| %>
-          <li
-            class="bar-data-list-item"
-            data-latitude="<%= l.latitude %>"
-            data-longitude="<%= l.longitude %>"
-            data-name="<%= l.name %>"
-          >
-            <p><%= link_to l.name.titleize, location_path(l.id) %></p>
-            <p><%= l.address.titleize%>, <%= l.city.titleize %></p>
 
-          </li>
-        <% end %>
-
-      </ul>
-      <%== pagy_nav(@pagy) %>
-    </div>
-  </div>
 
 </main>

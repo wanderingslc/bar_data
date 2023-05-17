@@ -19,18 +19,6 @@ export default class extends Controller{
             zoom: 15,
             mapId: 'f81ae4ad108280cb ',
             options: {
-                // styles: [
-                //     {
-                //         featureType: "poi.business",
-                //         stylers: [{ visibility: "off" }],
-                //     },
-                //     {
-                //         featureType: "transit",
-                //         elementType: "labels.icon",
-                //         stylers: [{ visibility: "off" }],
-                //     },
-                // ],
-
             },
 
         })
