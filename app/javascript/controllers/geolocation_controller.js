@@ -21,6 +21,8 @@ onConnect() {
     toggleCheckbox() {
         console.log(this.checkboxTarget.checked);
         if (this.checkboxTarget.checked) {
+            // let button = document.getElementById('geolocate-button');
+            // button.classList.remove('disabled');
             this.locate();
         }
     }
@@ -38,6 +40,9 @@ onConnect() {
         console.log([crd.latitude, crd.longitude]);
         this.latTarget.value = crd.latitude;
         this.lngTarget.value = crd.longitude;
+        document.getElementById('geo_info_lat').value = crd.latitude;
+        document.getElementById('geo_info_lng').value = crd.longitude;
+        document.getElementById('geolocate-button').classList.remove('disabled');
         // redirect with coords in params
         // location.assign(`/locations/?place=${crd.latitude}, ${crd.longitude}`)
         // location.assign(`homepage?lat_lng=${crd.latitude},${crd.longitude}`);

@@ -1,10 +1,6 @@
-<%= simple_form_for :address, url: 'pages/homepage', method: :get do |f|  %>
+
   <%= f.input :address %>
   <%= f.input :city%>
   <%= f.input :state %>
   <%= f.input :zip %>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary mt-1 mb-4' %>
-  </div>
-<% end %>
